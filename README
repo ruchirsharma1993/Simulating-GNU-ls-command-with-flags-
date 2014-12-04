@@ -1,0 +1,48 @@
+Implementation of ls -a, -t ,-l flags.
+
+The input to the program is taken from the command line arguments. Depending on the input the list of the contents of specified directory or the current directory is displayed similar to the output of ls command. The code also supports few flags like -l, -a and -t along with the basic ls functionality.
+
+Primarily 4 functions are used to implement the functionality of ls command. The details of functions are as under: 
+
+I) Name: funca
+Parameters: char *path (The path of the directory or "." is none is specified)
+Description: Function to display the list using ls -a option.
+Return Value: None
+
+II) Name: funcal
+Parameters: int flag,char *path
+Description: Function to display the list using ls -al, -lt and -l along with all its possible permutations. If value of flag is 1 it performs -al, if value of flag is 2 it performs -lt, If value of flag is 3 it performs -l.
+Return Value: None
+
+III) Name: funcalt
+Parameters: char *path
+Description: This function displays the list using ls -alt form along with all its possible permutations.
+Return Value: None
+
+IV) Name: funct
+Parameters: int flag, char *path
+Description: This function display the list in ls -t and ls -at form along with all its possible permutations. If value of flag is 1 it performs -t else if value of flag is 2 it performs -at.
+Return Value: None
+
+Other Functions: 
+I) Name: mysort
+Parameters: const struct dirent **a, const struct dirent **b
+Description: This function sorts the given input dirent structure namelist of scandir as per the modification time. It takes input as two direct structures and returns the result of their comparison. This function is used to perform the -t option with any other possible permutation of flags.
+Return Value: Integer, Returns -1, 1 or 0 depending on the valus of a and b.
+
+II) Name: myfilter
+Parameters: const struct dirent *entry
+Description: This function is used to filter the output of the scandir. Using this function eliminates the names of all the hidden files (starting with a dot '.') present in the folder from the dirent structure namelist. 
+Return value: Integer, 0 or -1 depending on the type of input file. If it is hidden then -1 is returned else 0 is returned.
+
+
+III) Name: month
+Parameters: int num
+Description: This functions takes a number as input and returns the month name of year corresponding to that number.
+Return Value: Character array, depending on the input parameter:
+"Jan", "Feb","Mar", "Apr","May","June","July","Aug","Sept","Oct","Nov","Dec"
+
+IV) Name: whatis
+Parameters: char var
+Description: This function is used to determine the input.
+Return value: Integer, dependent on the input. Range: 0-4.
