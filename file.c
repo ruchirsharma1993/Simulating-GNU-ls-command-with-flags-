@@ -1,3 +1,11 @@
+/*
+=======================================================
+Simulating GNU ls Command with flags 
+Author: RUCHIR SHARMA
+Email ID: ruchir.sharma@students.iiit.ac.in
+=======================================================
+*/
+
 #include<stdio.h>
 #include<dirent.h>
 #include<stdlib.h>
