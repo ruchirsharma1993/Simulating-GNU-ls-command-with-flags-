@@ -15,6 +15,8 @@ t: Sort by modification time
 ==================================================================
 
 The input to the program is taken from the command line arguments. Depending on the input the list of the contents of specified directory or the current directory is displayed similar to the output of ls command. The code also supports few flags like -l, -a and -t along with the basic ls functionality.
+
+
 =================================================================
                         Output Format:
 ==================================================================
